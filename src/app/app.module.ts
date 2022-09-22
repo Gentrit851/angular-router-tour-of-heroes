@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
@@ -7,27 +8,24 @@ import { ComposeMessageComponent } from './compose-message/compose-message.compo
 
 import { AppRoutingModule } from './app-routing.module';
 import { HeroesModule } from './heroes/heroes.module';
-import { CrisisCenterModule } from './crisis-center/crises-center.module';
-import { BrowserModule } from '@angular/platform-browser';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { CrisisCenterModule } from './crisis-center/crises-center.module'; 
+
+import { AdminModule } from './admin/admin.module';
 
 @NgModule({
   imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
+    CommonModule,
     FormsModule,
     HeroesModule,
     CrisisCenterModule,
-    AppRoutingModule,
+    AdminModule,
+    AppRoutingModule
   ],
   declarations: [
     AppComponent,
-    PageNotFoundComponent,
-    ComposeMessageComponent
-
+    ComposeMessageComponent,
+    PageNotFoundComponent
   ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
-
-//TODO Component-less route: grouping routes without a component
