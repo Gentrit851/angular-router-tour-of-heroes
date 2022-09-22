@@ -1,11 +1,10 @@
-// TODO: Feature Componetized like CrisisCenter
-import { Observable } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { CrisisCenterService } from '../crisis-center.service';
+import { CrisisService } from '../crisis.service';
 import { Crisis } from '../crisis';
+import { Observable } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-crisis-list',
@@ -17,7 +16,7 @@ export class CrisisListComponent implements OnInit {
   selectedId = 0;
 
   constructor(
-    private service: CrisisCenterService,
+    private service: CrisisService,
     private route: ActivatedRoute
   ) {}
 
@@ -30,3 +29,10 @@ export class CrisisListComponent implements OnInit {
     );
   }
 }
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/
